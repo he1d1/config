@@ -173,6 +173,7 @@
         enable = true;
         servers = {
           nil_ls.enable = true; # nix
+          denols.enable = true; # typescript
         };
       };
 
@@ -182,6 +183,7 @@
         settings = {
           formatters_by_ft = {
             nix = [ "nixfmt" ];
+            typescript = [ "deno_fmt" ];
           };
           format_on_save =
             # Lua
