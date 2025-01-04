@@ -175,6 +175,7 @@
           astro.enable = true; # astro
           nil_ls.enable = true; # nix
           rust_analyzer.enable = true; # rust
+          ts_ls.enable = true; # typescript
         };
       };
 
@@ -185,6 +186,7 @@
           formatters_by_ft = {
             nix = [ "nixfmt" ];
             rust = [ "rustfmt" ];
+            typescript = [ "prettier" ];
           };
           format_on_save =
             # Lua
