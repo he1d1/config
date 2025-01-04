@@ -12,7 +12,7 @@
     vt = 2;
     settings = {
       default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --remember remember-session --cmd 'dwl'";
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --remember remember-session --cmd 'dwl -s \"1password &\"'";
       };
     };
   };
