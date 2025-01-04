@@ -173,7 +173,7 @@
         enable = true;
         servers = {
           nil_ls.enable = true; # nix
-          denols.enable = true; # typescript
+          rust_analyzer.enable = true; # rust
         };
       };
 
@@ -183,7 +183,7 @@
         settings = {
           formatters_by_ft = {
             nix = [ "nixfmt" ];
-            typescript = [ "deno_fmt" ];
+            rust = [ "rustfmt" ];
           };
           format_on_save =
             # Lua
