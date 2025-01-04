@@ -40,7 +40,7 @@ static const Rule rules[] = {
 	{ "spotify",  NULL,       1 << 3,       0,           -1 }, /* Start on ONLY tag "9" */
 	{ "discord",  NULL,       1 << 3,       0,           -1 }, /* Start on ONLY tag "9" */
 	{ "steam",  NULL,       1 << 1,       0,           -1 }, /* Start on ONLY tag "9" */
-	{ "1password",  NULL,       1 << 6,   0,           -1 }, /* Start on ONLY tag "9" */
+	{ "1Password",  NULL,       1 << 6,   0,           -1 }, /* Start on ONLY tag "9" */
 };
 
 /* layout(s) */
