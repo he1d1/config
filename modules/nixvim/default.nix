@@ -172,6 +172,7 @@
       lsp = {
         enable = true;
         servers = {
+          astro.enable = true; # astro
           nil_ls.enable = true; # nix
           rust_analyzer.enable = true; # rust
         };
