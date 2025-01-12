@@ -12,7 +12,7 @@
     vt = 2;
     settings = {
       default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --remember remember-session --cmd 'dwl -s \"1password &\"'";
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --remember remember-session --cmd 'dwl -s \"1password & find ~/Pictures/Wallpapers/* | shuf -n 1 | xargs wbg &\"'";
       };
     };
   };
@@ -49,6 +49,14 @@
   xdg.portal = {
     enable = true;
     wlr.enable = true;
+    config = {
+      common = {
+        default = [
+          "wlr"
+          "gtk"
+        ];
+      };
+    };
   };
 
   nixpkgs.overlays = [
