@@ -39,7 +39,8 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
-            home-manager.users.d = import ./users/d;
+            home-manager.users.d = import ./users/d/desktop;
+
           }
 
           inputs.nixvim.nixosModules.nixvim

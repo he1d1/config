@@ -1,11 +1,5 @@
 { pkgs, lib, ... }:
 {
-
-  imports = [
-    ../../home
-    ../../home/foot
-  ];
-
   programs.git = {
     enable = true;
 
@@ -31,5 +25,26 @@
 
   programs.bash = {
     enable = true;
+  };
+
+  programs.ssh = {
+    enable = true;
+
+    extraConfig = ''
+      Host *
+          IdentityAgent ~/.1password/agent.sock
+    '';
+
+    matchBlocks = {
+      "pi-controller-01" = {
+        hostname = "192.168.1.101";
+      };
+      "pi-controller-02" = {
+        hostname = "192.168.1.102";
+      };
+      "pi-controller-03" = {
+        hostname = "192.168.1.103";
+      };
+    };
   };
 }

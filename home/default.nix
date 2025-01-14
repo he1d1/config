@@ -24,12 +24,6 @@
   #     xxx
   # '';
 
-  # set cursor size and dpi for 4k monitor
-  xresources.properties = {
-    "Xcursor.size" = 16;
-    "Xft.dpi" = 172;
-  };
-
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     neofetch
@@ -81,28 +75,7 @@
     pciutils # lspci
     usbutils # lsusb
     xdg-user-dirs
-
-    # desktop apps
-    firefox # Browser
-    vesktop # Discord
   ];
-
-  programs.bash = {
-    enable = true;
-    enableCompletion = true;
-    # TODO add your custom bashrc here
-    bashrcExtra = ''
-      # export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
-    '';
-  };
-
-  programs.ssh = {
-    enable = true;
-    extraConfig = ''
-      Host *
-          IdentityAgent ~/.1password/agent.sock
-    '';
-  };
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
