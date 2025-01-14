@@ -29,6 +29,12 @@
       signcolumn = "yes";
     };
 
+    filetype = {
+      extension = {
+        mdx = "markdown";
+      };
+    };
+
     plugins = {
       # statusline
       lualine = {
@@ -173,11 +179,23 @@
         enable = true;
         servers = {
           astro.enable = true; # astro
+          ltex = {
+            # grammar, latex, markdown
+            enable = true;
+            settings.language = "en-GB";
+          };
           nil_ls.enable = true; # nix
-          rust_analyzer.enable = true; # rust
+          rust_analyzer = {
+            enable = true;
+            settings = {
+              diagnostics.enable = true;
+            };
+          }; # rust
           ts_ls.enable = true; # typescript
         };
       };
+
+      lsp-lines.enable = true;
 
       # formatting
       conform-nvim = {
