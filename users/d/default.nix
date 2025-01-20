@@ -1,9 +1,5 @@
 { pkgs, lib, ... }:
 {
-  imports = [
-    ../../home
-  ];
-
   programs.git = {
     enable = true;
 
@@ -38,5 +34,17 @@
       Host *
           IdentityAgent ~/.1password/agent.sock
     '';
+
+    matchBlocks = {
+      "pi-controller-01" = {
+        hostname = "192.168.1.101";
+      };
+      "pi-controller-02" = {
+        hostname = "192.168.1.102";
+      };
+      "pi-controller-03" = {
+        hostname = "192.168.1.103";
+      };
+    };
   };
 }

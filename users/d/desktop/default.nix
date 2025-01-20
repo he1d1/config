@@ -3,6 +3,7 @@
 
   imports = [
     ../.
+    ../../../home
     ../../../home/desktop
     ../../../home/desktop/foot
   ];

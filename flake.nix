@@ -27,25 +27,6 @@
       nixpkgs,
       ...
     }@inputs:
-    let
-      # Helper function for Raspberry Pi configurations
-      mkPiConfig =
-        name:
-        nixpkgs.lib.nixosSystem {
-          system = "aarch64-linux";
-          specialArgs = { inherit inputs; };
-          modules = [
-            ./hosts/${name}
-            inputs.home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-
-              home-manager.users.d = import ./users/d/desktop;
-            }
-          ];
-        };
-    in
     {
       nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -58,7 +39,8 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 
-            home-manager.users.d = import ./users/d;
+            home-manager.users.d = import ./users/d/desktop;
+
           }
 
           inputs.nixvim.nixosModules.nixvim
@@ -66,10 +48,5 @@
           inputs.spicetify-nix.nixosModules.default
         ];
       };
-
-      # Use the helper function for Raspberry Pi configurations
-      nixosConfigurations.pi-red = mkPiConfig "pi-red";
-      nixosConfigurations.pi-blue = mkPiConfig "pi-blue";
-      nixosConfigurations.pi-green = mkPiConfig "pi-green";
     };
 }

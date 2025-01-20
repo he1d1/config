@@ -14,7 +14,6 @@
     ../../modules/1password
     ../../modules/steam
     ../../modules/spicetify
-    ../../modules/tailscale
   ];
 
   # Use the systemd-boot boot loader.
