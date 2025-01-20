@@ -19,6 +19,8 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
   outputs =
@@ -46,6 +48,13 @@
           inputs.nixvim.nixosModules.nixvim
 
           inputs.spicetify-nix.nixosModules.default
+        ];
+      };
+      nixosConfigurations.pi01 = nixpkgs.lib.nixosSystem {
+        system = "aarch64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/pi
         ];
       };
     };

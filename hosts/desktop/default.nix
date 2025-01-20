@@ -11,9 +11,9 @@
     ../../modules/core
     ../../modules/nixvim
     ../../modules/dwl
-    ../../modules/1password
-    ../../modules/steam
-    ../../modules/spicetify
+    ../../modules/1password.nix
+    ../../modules/steam.nix
+    ../../modules/spicetify.nix
   ];
 
   # Use the systemd-boot boot loader.
