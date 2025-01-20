@@ -8,6 +8,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ../../modules/core
   ];
   hardware = {
     raspberry-pi."4".apply-overlays-dtmerge.enable = true;
@@ -16,6 +17,7 @@
       filter = "*rpi-4-*.dtb";
     };
   };
+  services.openssh.enable = true;
   console.enable = false;
   environment.systemPackages = with pkgs; [
     libraspberrypi
