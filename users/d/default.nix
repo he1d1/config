@@ -1,5 +1,9 @@
 { pkgs, lib, ... }:
 {
+  imports = [
+    ../../home
+  ];
+
   programs.git = {
     enable = true;
 

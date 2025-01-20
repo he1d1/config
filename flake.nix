@@ -57,6 +57,15 @@
         modules = [
           ./hosts/pi
           nixos-hardware.nixosModules.raspberry-pi-4
+
+          inputs.home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+
+            home-manager.users.d = import ./users/d;
+
+          }
         ];
       };
     };
