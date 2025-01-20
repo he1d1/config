@@ -23,8 +23,6 @@
   networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
   networking.firewall.enable = false;
 
-  nixpkgs.config.allowUnfree = true;
-
   # for Nvidia GPU
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.graphics.enable = true;

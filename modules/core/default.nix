@@ -13,6 +13,8 @@
   services.xserver.xkb.layout = "gb";
   services.xserver.xkb.variant = "dvorak";
 
+  nixpkgs.config.allowUnfree = true;
+
   services.dbus.enable = true;
 
   # Define the user account.
