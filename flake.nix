@@ -27,6 +27,7 @@
     {
       self,
       nixpkgs,
+      nixos-hardware,
       ...
     }@inputs:
     {
@@ -55,6 +56,7 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./hosts/pi
+          nixos-hardware.nixosModules.raspberry-pi-4
         ];
       };
     };
